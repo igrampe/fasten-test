@@ -1,0 +1,46 @@
+//
+//  PrefixHeader.pch
+//  Client
+//
+//  Created by Semyon Belokovsky on 17/11/15.
+//  Copyright © 2015 App Plus. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#endif
+
+#define DUUID ([[[UIDevice currentDevice] identifierForVendor] UUIDString])
+#define IOS_VERSION ([[[UIDevice currentDevice] systemVersion] floatValue])
+#define IS_IPAD	(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+#define USER_DEFAULTS [NSUserDefaults standardUserDefaults]
+
+#define MAIN_SCREEN [UIScreen mainScreen]
+
+#ifdef DEBUG
+#   define DLog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
+#else
+#   define DLog(...)
+#   define NSLog(...)
+#endif
+
+#define NOTIFICATION_CENTER [NSNotificationCenter defaultCenter]
+#define USER_DEFAULTS [NSUserDefaults standardUserDefaults]
+
+#define NSLS(string) NSLocalizedString(string, @"")
+
+#ifdef DEBUG
+    #define API_DEBUG
+#endif
+
+#ifdef API_DEBUG
+#define ALog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
+#else
+#define ALog(...)
+#endif
+
+#endif /* PrefixHeader_pch */
