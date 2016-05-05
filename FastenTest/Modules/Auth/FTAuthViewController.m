@@ -69,7 +69,7 @@
     [self.contentView addSubview:self.activityView];
     
     self.signInButton = [FTRoundedButton newAutoLayoutView];
-    [self.signInButton setTitle:NSLS(@"Sign in") forState:UIControlStateNormal];
+    [self.signInButton setTitle:NSLS(@"Login") forState:UIControlStateNormal];
     self.signInButton.backgroundColor = APLCSC(Color_Orange);
     [self.signInButton addTarget:self.output
                           action:@selector(actionSignIn)
