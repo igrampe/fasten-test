@@ -10,6 +10,8 @@
 
 #import <UICKeyChainStore.h>
 
+NSString *const kFTStateManagerKeyLaunchCount = @"kFTStateManagerKeyLaunchCount";
+
 NSString *const kFTStateManagerKeyApiToken = @"kFTStateManagerKeyApiToken";
 NSString *const kFTStateManagerKeyApiTokenExpiration = @"kFTStateManagerKeyApiTokenExpiration";
 
@@ -30,12 +32,24 @@ NSString *const kFTStateManagerKeyApiTokenExpiration = @"kFTStateManagerKeyApiTo
     if (self)
     {
         self.keychain = [UICKeyChainStore keyChainStoreWithService:[NSBundle mainBundle].bundleIdentifier];
+        
+        NSInteger launchCount = [USER_DEFAULTS integerForKey:kFTStateManagerKeyLaunchCount];
+        launchCount++;
+        [USER_DEFAULTS setInteger:launchCount forKey:kFTStateManagerKeyLaunchCount];
+        [USER_DEFAULTS synchronize];
+        
+        if (launchCount == 1)
+        {
+            [self.keychain removeAllItems];
+        }
+        
         _apiToken = self.keychain[kFTStateManagerKeyApiToken];
         NSData *data = [self.keychain dataForKey:kFTStateManagerKeyApiTokenExpiration];
         if (data)
         {
             _apiTokenExpirationDate = [NSKeyedUnarchiver unarchiveObjectWithData:data];
         }
+        
         if ([_apiTokenExpirationDate timeIntervalSinceDate:[NSDate date]] <= 0)
         {
             [self resetApiToken];

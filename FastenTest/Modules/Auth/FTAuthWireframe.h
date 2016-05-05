@@ -10,6 +10,16 @@
 
 #import "FTWireframe.h"
 
+@class FTAuthWireframe;
+
+@protocol FTAuthWireframeOutput <NSObject>
+
+- (void)authWireframeDidFinish:(FTAuthWireframe *)wireframe;
+
+@end
+
 @interface FTAuthWireframe : NSObject <FTWireframeProtocol>
+
+@property (nonatomic, weak) id<FTAuthWireframeOutput> output;
 
 @end

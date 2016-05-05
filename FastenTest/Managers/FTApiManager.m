@@ -11,6 +11,8 @@
 #import "FTSocketManager.h"
 #import "FTSocketMessage.h"
 
+#import "NSDate+Helpers.h"
+
 NSString *const FTApiManagerErrorDomain = @"FTApiManagerErrorDomain";
 
 #pragma mark - Message Types
@@ -70,7 +72,14 @@ NSString *const kFTApiMessageTypeInApiToken = @"CUSTOMER_API_TOKEN";
     {
         if ([incomingMessage.type isEqualToString:kFTApiMessageTypeInApiToken])
         {
+            NSString *apiToken = incomingMessage.data[@"api_token"];
+            NSString *expirationDateStr = incomingMessage.data[@"api_token_expiration_date"];
+            NSDate *expirationDate = [NSDate ft_dateFromString:expirationDateStr];
             
+            if (handler)
+            {
+                handler(apiToken, expirationDate, nil);
+            }
         } else
         {
             if (handler)

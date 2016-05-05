@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0F913E861D2D5114FE7197FB /* libPods-FastenTest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AEA235105EB3B170AC17C120 /* libPods-FastenTest.a */; };
+		530BD55F1CDBA1EC003FCA1B /* NSDate+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 530BD55E1CDBA1EC003FCA1B /* NSDate+Helpers.m */; };
 		532239771CD4136200747F60 /* FTSocketManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 532239761CD4136200747F60 /* FTSocketManager.m */; };
 		53E2855B1CD419440077831A /* FTSocketMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E2855A1CD419440077831A /* FTSocketMessage.m */; };
 		53E285621CDA475B0077831A /* FTApiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E285611CDA475B0077831A /* FTApiManager.m */; };
@@ -46,6 +47,8 @@
 
 /* Begin PBXFileReference section */
 		0EDA2FEB4EED807379E5A239 /* Pods-FastenTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FastenTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-FastenTest/Pods-FastenTest.release.xcconfig"; sourceTree = "<group>"; };
+		530BD55D1CDBA1EC003FCA1B /* NSDate+Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Helpers.h"; sourceTree = "<group>"; };
+		530BD55E1CDBA1EC003FCA1B /* NSDate+Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Helpers.m"; sourceTree = "<group>"; };
 		532239751CD4136200747F60 /* FTSocketManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTSocketManager.h; sourceTree = "<group>"; };
 		532239761CD4136200747F60 /* FTSocketManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTSocketManager.m; sourceTree = "<group>"; };
 		537982F21CD4144800757369 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
@@ -138,6 +141,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		530BD55C1CDBA1D9003FCA1B /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				530BD55D1CDBA1EC003FCA1B /* NSDate+Helpers.h */,
+				530BD55E1CDBA1EC003FCA1B /* NSDate+Helpers.m */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		53F1C26F1CD3D01F00713A08 = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +171,7 @@
 		53F1C27A1CD3D01F00713A08 /* FastenTest */ = {
 			isa = PBXGroup;
 			children = (
+				530BD55C1CDBA1D9003FCA1B /* Helpers */,
 				53F1C2AA1CD3D1F800713A08 /* Managers */,
 				53F1C2AB1CD3D1F800713A08 /* Model */,
 				53F1C2A21CD3D19600713A08 /* Supporting Files */,
@@ -521,6 +534,7 @@
 				53F1C2AE1CD3D21200713A08 /* FTServiceLocator.m in Sources */,
 				53E2857B1CDB6B970077831A /* FTErrorView.m in Sources */,
 				53F1C2A71CD3D19600713A08 /* main.m in Sources */,
+				530BD55F1CDBA1EC003FCA1B /* NSDate+Helpers.m in Sources */,
 				53F1C2F01CD3D5AF00713A08 /* NSNotificationCenter+APL.m in Sources */,
 				53F1C2FB1CD3D81B00713A08 /* APLBlocks.m in Sources */,
 				53F1C2C41CD3D4FF00713A08 /* FTRootViewController.m in Sources */,

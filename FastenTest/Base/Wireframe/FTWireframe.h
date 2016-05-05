@@ -21,6 +21,7 @@
 
 - (void)presentViewFromViewController:(UIViewController *)fromVC;
 - (void)presentViewFromWindow:(UIWindow *)fromWindow;
+- (void)dismiss;
 
 @end
 

@@ -44,6 +44,12 @@
     });
 }
 
+- (void)dismiss
+{
+    [self.userInterface removeFromParentViewController];
+    [self.userInterface.view removeFromSuperview];
+}
+
 #pragma mark - FTAuthViewOutput
 
 - (void)viewWillAppear
@@ -96,6 +102,7 @@
             } else
             {
                 [welf.serviceLocator.stateManager setApiToken:apiToken withExpirationDate:apiTokenExpiration];
+                [welf.output authWireframeDidFinish:welf];
             }
         }];
     }

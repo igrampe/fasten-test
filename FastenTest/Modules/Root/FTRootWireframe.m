@@ -16,7 +16,7 @@
 
 #import "FTAuthWireframe.h"
 
-@interface FTRootWireframe () <FTRootViewOutput>
+@interface FTRootWireframe () <FTRootViewOutput, FTAuthWireframeOutput>
 
 @property (nonatomic, strong) FTRootViewController *userInterface;
 
@@ -61,6 +61,7 @@
 {
     self.authWireframe = [FTAuthWireframe new];
     self.authWireframe.serviceLocator = self.serviceLocator;
+    self.authWireframe.output = self;
     if ([self.authWireframe respondsToSelector:@selector(presentViewFromViewController:)])
     {
         [self.authWireframe presentViewFromViewController:self.userInterface];
@@ -70,6 +71,21 @@
 - (void)_presentStatus
 {
     
+}
+
+#pragma mark - FTAuthWireframeOutput
+
+- (void)authWireframeDidFinish:(FTAuthWireframe *)wireframe
+{
+    if ([wireframe respondsToSelector:@selector(dismiss)])
+    {
+        [wireframe dismiss];
+    }
+    if (self.authWireframe == wireframe)
+    {
+        self.authWireframe = nil;
+    }
+    [self _presentStatus];
 }
 
 @end
