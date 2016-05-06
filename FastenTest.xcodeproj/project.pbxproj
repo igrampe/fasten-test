@@ -10,6 +10,30 @@
 	<string>46</string>
 	<key>objects</key>
 	<dict>
+		<key>057AFDF9F26F428A6586FDE5</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Embed Pods Frameworks</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>"${SRCROOT}/Pods/Target Support Files/Pods-FastenTestTests/Pods-FastenTestTests-frameworks.sh"
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
 		<key>0EDA2FEB4EED807379E5A239</key>
 		<dict>
 			<key>includeInIndex</key>
@@ -62,37 +86,7 @@ fi
 			<key>showEnvVarsInLog</key>
 			<string>0</string>
 		</dict>
-		<key>46585A9039AF729FD5BFEC38</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Check Pods Manifest.lock</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
-if [[ $? != 0 ]] ; then
-    cat &lt;&lt; EOM
-error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
-EOM
-    exit 1
-fi
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>470061680C3079215C28271E</key>
+		<key>43A3C012243785912F783CC7</key>
 		<dict>
 			<key>fileRef</key>
 			<string>C4B9D31582A31C4202DA5EEF</string>
@@ -265,19 +259,6 @@ fi
 			<key>runOnlyForDeploymentPostprocessing</key>
 			<string>0</string>
 		</dict>
-		<key>530BD56A1CDC8DFE003FCA1B</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>470061680C3079215C28271E</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
 		<key>530BD56B1CDC8DFE003FCA1B</key>
 		<dict>
 			<key>buildActionMask</key>
@@ -295,12 +276,12 @@ fi
 			<string>530BD5741CDC8DFE003FCA1B</string>
 			<key>buildPhases</key>
 			<array>
-				<string>46585A9039AF729FD5BFEC38</string>
+				<string>562619EE1C3949FACF0EF6A5</string>
 				<string>530BD5691CDC8DFE003FCA1B</string>
-				<string>530BD56A1CDC8DFE003FCA1B</string>
 				<string>530BD56B1CDC8DFE003FCA1B</string>
-				<string>B8CB72A79D7144E13BBE582F</string>
 				<string>A14E42E0B89AF547773114C0</string>
+				<string>057AFDF9F26F428A6586FDE5</string>
+				<string>B8EC8FD6C1F85BC296FC3901</string>
 			</array>
 			<key>buildRules</key>
 			<array/>
@@ -2420,6 +2401,36 @@ fi
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
+		<key>562619EE1C3949FACF0EF6A5</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Check Pods Manifest.lock</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
+if [[ $? != 0 ]] ; then
+    cat &lt;&lt; EOM
+error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
+EOM
+    exit 1
+fi
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
 		<key>7BFE558D98DDE71632AA4DCA</key>
 		<dict>
 			<key>buildActionMask</key>
@@ -2451,6 +2462,7 @@ fi
 				<string>530BD5771CDCD0B8003FCA1B</string>
 				<string>AEA235105EB3B170AC17C120</string>
 				<string>C4B9D31582A31C4202DA5EEF</string>
+				<string>F82FCE69A4C7FCF5312C8D7F</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
@@ -2542,28 +2554,17 @@ fi
 			<key>sourceTree</key>
 			<string>BUILT_PRODUCTS_DIR</string>
 		</dict>
-		<key>B8CB72A79D7144E13BBE582F</key>
+		<key>B8EC8FD6C1F85BC296FC3901</key>
 		<dict>
 			<key>buildActionMask</key>
 			<string>2147483647</string>
 			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
+			<array>
+				<string>43A3C012243785912F783CC7</string>
+			</array>
 			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Embed Pods Frameworks</string>
-			<key>outputPaths</key>
-			<array/>
+			<string>PBXFrameworksBuildPhase</string>
 			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Target Support Files/Pods-FastenTestTests/Pods-FastenTestTests-frameworks.sh"
-</string>
-			<key>showEnvVarsInLog</key>
 			<string>0</string>
 		</dict>
 		<key>BC5962D4ADECF6E88E3B4821</key>
@@ -2617,6 +2618,19 @@ fi
 			<string>Pods/Target Support Files/Pods-FastenTestTests/Pods-FastenTestTests.release.xcconfig</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F82FCE69A4C7FCF5312C8D7F</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>libPods-FastenTest-FastenTestTests.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
 		</dict>
 	</dict>
 	<key>rootObject</key>
