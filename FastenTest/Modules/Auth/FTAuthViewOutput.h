@@ -15,7 +15,6 @@
 
 - (void)viewWillAppear;
 - (void)actionSignIn;
-- (void)eventEmailFieldTextDidChange;
 
 @end
 

@@ -15,12 +15,14 @@
 #import "FTStateManager.h"
 
 #import "FTAuthWireframe.h"
+#import "FTStatusWireframe.h"
 
 @interface FTRootWireframe () <FTRootViewOutput, FTAuthWireframeOutput>
 
 @property (nonatomic, strong) FTRootViewController *userInterface;
 
 @property (nonatomic, strong) FTAuthWireframe *authWireframe;
+@property (nonatomic, strong) FTStatusWireframe *statusWireframe;
 
 @end
 
@@ -48,7 +50,7 @@
 {
     if ([self.serviceLocator.stateManager isAuthorized])
     {
-        
+        [self _presentStatusWithSuccessMessage:NO];
     } else
     {
         [self _presentSignIn];
@@ -68,9 +70,15 @@
     }
 }
 
-- (void)_presentStatus
+- (void)_presentStatusWithSuccessMessage:(BOOL)successMessage
 {
-    
+    self.statusWireframe = [FTStatusWireframe new];
+    self.statusWireframe.shouldShowSignInMessage = successMessage;
+    self.statusWireframe.serviceLocator = self.serviceLocator;
+    if ([self.statusWireframe respondsToSelector:@selector(presentViewFromViewController:)])
+    {
+        [self.statusWireframe presentViewFromViewController:self.userInterface];
+    }
 }
 
 #pragma mark - FTAuthWireframeOutput
@@ -85,7 +93,7 @@
     {
         self.authWireframe = nil;
     }
-    [self _presentStatus];
+    [self _presentStatusWithSuccessMessage:YES];
 }
 
 @end

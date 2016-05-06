@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0F913E861D2D5114FE7197FB /* libPods-FastenTest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AEA235105EB3B170AC17C120 /* libPods-FastenTest.a */; };
 		530BD55F1CDBA1EC003FCA1B /* NSDate+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 530BD55E1CDBA1EC003FCA1B /* NSDate+Helpers.m */; };
+		530BD5631CDBF31F003FCA1B /* FTStatusWireframe.m in Sources */ = {isa = PBXBuildFile; fileRef = 530BD5621CDBF31F003FCA1B /* FTStatusWireframe.m */; };
+		530BD5681CDBF35D003FCA1B /* FTStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 530BD5671CDBF35D003FCA1B /* FTStatusViewController.m */; };
 		532239771CD4136200747F60 /* FTSocketManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 532239761CD4136200747F60 /* FTSocketManager.m */; };
 		53E2855B1CD419440077831A /* FTSocketMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E2855A1CD419440077831A /* FTSocketMessage.m */; };
 		53E285621CDA475B0077831A /* FTApiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E285611CDA475B0077831A /* FTApiManager.m */; };
@@ -49,6 +51,12 @@
 		0EDA2FEB4EED807379E5A239 /* Pods-FastenTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FastenTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-FastenTest/Pods-FastenTest.release.xcconfig"; sourceTree = "<group>"; };
 		530BD55D1CDBA1EC003FCA1B /* NSDate+Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Helpers.h"; sourceTree = "<group>"; };
 		530BD55E1CDBA1EC003FCA1B /* NSDate+Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Helpers.m"; sourceTree = "<group>"; };
+		530BD5611CDBF31F003FCA1B /* FTStatusWireframe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTStatusWireframe.h; sourceTree = "<group>"; };
+		530BD5621CDBF31F003FCA1B /* FTStatusWireframe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTStatusWireframe.m; sourceTree = "<group>"; };
+		530BD5641CDBF33C003FCA1B /* FTStatusViewInput.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FTStatusViewInput.h; sourceTree = "<group>"; };
+		530BD5651CDBF346003FCA1B /* FTStatusViewOutput.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FTStatusViewOutput.h; sourceTree = "<group>"; };
+		530BD5661CDBF35D003FCA1B /* FTStatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTStatusViewController.h; sourceTree = "<group>"; };
+		530BD5671CDBF35D003FCA1B /* FTStatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTStatusViewController.m; sourceTree = "<group>"; };
 		532239751CD4136200747F60 /* FTSocketManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTSocketManager.h; sourceTree = "<group>"; };
 		532239761CD4136200747F60 /* FTSocketManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTSocketManager.m; sourceTree = "<group>"; };
 		537982F21CD4144800757369 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
@@ -150,6 +158,19 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		530BD5601CDBA500003FCA1B /* Status */ = {
+			isa = PBXGroup;
+			children = (
+				530BD5611CDBF31F003FCA1B /* FTStatusWireframe.h */,
+				530BD5621CDBF31F003FCA1B /* FTStatusWireframe.m */,
+				530BD5641CDBF33C003FCA1B /* FTStatusViewInput.h */,
+				530BD5651CDBF346003FCA1B /* FTStatusViewOutput.h */,
+				530BD5661CDBF35D003FCA1B /* FTStatusViewController.h */,
+				530BD5671CDBF35D003FCA1B /* FTStatusViewController.m */,
+			);
+			path = Status;
+			sourceTree = "<group>";
+		};
 		53F1C26F1CD3D01F00713A08 = {
 			isa = PBXGroup;
 			children = (
@@ -210,9 +231,9 @@
 		53F1C2971CD3D0C000713A08 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				530BD5601CDBA500003FCA1B /* Status */,
 				53F1C2B51CD3D2A700713A08 /* Auth */,
 				53F1C2B61CD3D2A700713A08 /* Root */,
-				53F1C2B71CD3D2A700713A08 /* StatusPage */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -307,13 +328,6 @@
 				53F1C2F81CD3D60500713A08 /* FTRootViewOutput.h */,
 			);
 			path = Root;
-			sourceTree = "<group>";
-		};
-		53F1C2B71CD3D2A700713A08 /* StatusPage */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = StatusPage;
 			sourceTree = "<group>";
 		};
 		53F1C2B81CD3D30A00713A08 /* View */ = {
@@ -531,8 +545,10 @@
 				53E285621CDA475B0077831A /* FTApiManager.m in Sources */,
 				53E285651CDA49690077831A /* FTStateManager.m in Sources */,
 				53F1C2FE1CD3D92B00713A08 /* FTView.m in Sources */,
+				530BD5631CDBF31F003FCA1B /* FTStatusWireframe.m in Sources */,
 				53F1C2AE1CD3D21200713A08 /* FTServiceLocator.m in Sources */,
 				53E2857B1CDB6B970077831A /* FTErrorView.m in Sources */,
+				530BD5681CDBF35D003FCA1B /* FTStatusViewController.m in Sources */,
 				53F1C2A71CD3D19600713A08 /* main.m in Sources */,
 				530BD55F1CDBA1EC003FCA1B /* NSDate+Helpers.m in Sources */,
 				53F1C2F01CD3D5AF00713A08 /* NSNotificationCenter+APL.m in Sources */,
