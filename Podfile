@@ -23,3 +23,8 @@ target 'FastenTest' do
   network_pods
   ui_pods
 end
+
+target 'FastenTestTests' do
+    data_pods
+end
+
