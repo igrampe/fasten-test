@@ -24,12 +24,22 @@
     [super setUp];
     self.apiToken = @"api_token";
     [self resetKeychain];
+    [self resetUserDefaults];
 }
 
 - (void)tearDown
 {
     // Put teardown code here. This method is called after the invocation of each test method in the class.
     [super tearDown];
+}
+
+- (void)testInitialize
+{
+    // When
+    FTStateManager *stateManager1 = [FTStateManager new];
+    
+    // Then
+    XCTAssertNotNil(stateManager1);
 }
 
 - (void)testShouldSetApiToken
@@ -142,6 +152,13 @@
 {
     UICKeyChainStore *keychain = [UICKeyChainStore keyChainStoreWithService:[NSBundle mainBundle].bundleIdentifier];
     [keychain removeAllItems];
+}
+
+- (void)resetUserDefaults
+{
+    NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
+    [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomain];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 @end
